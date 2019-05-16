@@ -7,24 +7,26 @@
                 :options="tableOptions"
                 name="widgetpage"
                 ref="table"
+                class="end-subscription"
                 @loaded="props.resize"
             >
-                <div slot="alias" slot-scope="props">
+                <div slot="alias" slot-scope="props" class="end-subscription__alias-column">
                     <strong>
                         <router-link
-                            class="toAmo"
+                            class="end-subscription__to-amo-link"
                             :to="{
                                 name: 'amoPage',
                                 params: { amo: props.row.subdomain },
                             }"
-                            >{{ props.row.alias }}</router-link
                         >
+                            {{ props.row.alias }}
+                        </router-link>
                     </strong>
                 </div>
                 <div slot="name" slot-scope="props">
                     <strong>
                         <router-link
-                            class="toAmo"
+                            class="end-subscription__to-amo-link"
                             :to="{
                                 name: 'widgetPage',
                                 params: { id: props.row.widget_id },
